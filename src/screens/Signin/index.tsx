@@ -11,7 +11,6 @@ export function SignIn() {
   return (
     <View style={styles.container}>
       
-
     <Image source={IllustrationImg} style={styles.image} resizeMode= "stretch" />
 
     <View style={styles.content}>
@@ -28,7 +27,7 @@ export function SignIn() {
 
        {/*Caso queira reutilizar componente trocar o title para mudança */}
       <ButtonIcon  title="Entrar com Discord"
-      activeOpacity= {0.7}
+      activeOpacity= {0.5}
       /> 
     </View>
     </View>
