@@ -10,7 +10,18 @@ const { Navigator, Screen } = createStackNavigator();
 export function AuthRoutes(){
     /*Uma screen recebe dois parametros o nome eo componente a ser chamado */
     return(
-        <Navigator>
+        <Navigator
+        screenOptions={{
+            cardStyle: {
+                backgroundColor: '#0E1647'
+                
+            },
+            gestureEnabled: false,
+            animationEnabled: false,
+            headerShown: false,
+        }}
+    >
+
             <Screen
             name="SigIn"
             component={SignIn} />
@@ -18,6 +29,7 @@ export function AuthRoutes(){
             <Screen
             name="Home"
             component={Home} />
+
         </Navigator>
     )
 }

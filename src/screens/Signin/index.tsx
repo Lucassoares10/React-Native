@@ -4,8 +4,18 @@ import { View, Text, Image, StatusBar } from 'react-native';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import IllustrationImg from "../../assets/illustration.png";
 import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
+
 
 export function SignIn() {
+
+    const navigation = useNavigation();
+
+    function handleSignIn() {
+      navigation.navigate('Home');
+
+    }
+
     /* const[text, setText] = useState(''); |||||||Criar um estado(text=nome), (função que atualiza o estado (Set.nome)) */
 
   return (
@@ -27,7 +37,8 @@ export function SignIn() {
 
        {/*Caso queira reutilizar componente trocar o title para mudança */}
       <ButtonIcon  title="Entrar com Discord"
-      activeOpacity= {0.5}
+      
+      onPress={handleSignIn}
       /> 
     </View>
     </View>
