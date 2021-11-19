@@ -9,7 +9,10 @@ import { theme } from "../../global/styles/theme";
 import  CalendarSvg  from "../../assets/calendar.svg";
 
 export type GuildProps ={
-    owner: true;
+    id: string;
+    name: string;
+    icon: null,
+    owner: boolean;
 }
 
 export type AppoitmentProps = {
