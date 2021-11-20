@@ -9,6 +9,7 @@ import {ListDivider} from '../../components/ListDivider';
 import { Background } from "../../components/Background";
 import {styles} from './styles';
 import {useNavigation} from "@react-navigation/native";
+import {AppointmentCreate} from "../AppointmentCreate";
 
 export function Home() {
     const [category, setCategory] = useState('');
@@ -51,12 +52,15 @@ export function Home() {
     function handleAppointmentDetails(){
         navigation.navigate('AppointmentDetails');
     }
+    function handleAppointmentCreate(){
+        navigation.navigate('AppointmentCreate');
+    }
 
     return (
         <Background>
             <View style={styles.header}>
                 <Profile/>
-                <ButtonAdd/>
+                <ButtonAdd onPress={handleAppointmentCreate}/>
             </View>
 
             <CategorySelect

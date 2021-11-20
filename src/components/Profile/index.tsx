@@ -7,7 +7,7 @@ export function Profile(){
     return(
         <View style={styles.container}>
 
-            <Avatar urlImage="https://github.com/Lucassoares10.png"/>
+            <Avatar urlImage="https://github.com/lucassoares10.png"/>
 
             <View>
                 <View style={styles.user}>
