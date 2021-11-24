@@ -1,14 +1,15 @@
 import React from 'react';
-import {View, Text, Image, StatusBar, Alert} from 'react-native';
+import {View, Text, Image, StatusBar, Alert, ActivityIndicator} from 'react-native';
 import {ButtonIcon} from '../../components/ButtonIcon';
 import {Background} from "../../components/Background";
 import IllustrationImg from "../../assets/illustration.png";
 import {styles} from './styles';
 import {useAuth} from "../../hooks/auth";
+import {theme} from "../../global/styles/theme";
 
 
 export function SignIn(){
-    const { user, signIn } = useAuth();
+    const { loading, signIn } = useAuth();
 
     async function handleSignIn() {
         try {
@@ -39,9 +40,13 @@ export function SignIn(){
                     </Text>
 
                     {/*Caso queira reutilizar componente trocar o title para mudança */}
-                    <ButtonIcon title="Entrar com Discord"
+                    {
+                        loading ? <ActivityIndicator color={theme.colors.primary} />
+                        :
+                        <ButtonIcon title="Entrar com Discord"
                                 onPress={handleSignIn}
                     />
+                    }
                 </View>
             </View>
         </Background>
